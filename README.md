@@ -36,6 +36,45 @@ cp .env.example .env
 python main.py
 ```
 
+## Конфигурация API ключей
+
+Для работы бота необходимы два типа API ключей:
+
+### 1. Telegram Bot Token
+
+1. Откройте Telegram и найдите бота [@BotFather](https://t.me/botfather)
+2. Выполните команду `/newbot` и следуйте инструкциям
+3. Вы получите токен в формате: `123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11`
+4. Скопируйте этот токен и поместите его в `.env` как `TELEGRAM_TOKEN`
+
+### 2. GigaChat API Key
+
+1. Перейдите на сайт [Sberbank GigaChat](https://gigachat.devices.sberbank.ru/)
+2. Зарегистрируйтесь или войдите в свой аккаунт
+3. Получите API ключ в разделе "Мой профиль" или "API Keys"
+4. Также вам понадобится `Client ID` для авторизации
+5. Поместите значения в `.env`:
+   - `GIGACHAT_API_KEY` - ваш API ключ
+   - `GIGACHAT_API_PERS` - обычно это `GIGACHAT_API_PERS` (scope)
+   - `Client_ID` - ваш Client ID
+
+### 3. Создание файла .env
+
+1. Скопируйте файл `.env.example` в `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+2. Отредактируйте `.env` и замените значения на ваши реальные ключи:
+   ```
+   TELEGRAM_TOKEN=ваш_токен_telegram
+   GIGACHAT_API_KEY=ваш_api_ключ_gigachat
+   GIGACHAT_API_PERS=GIGACHAT_API_PERS
+   Client_ID=ваш_client_id
+   GIGACHAT_BASE_URL=https://gigachat.devices.sberbank.ru/api/v1/chat/completions
+   ```
+
+⚠️ **ВАЖНО**: Никогда не коммитьте файл `.env` в Git репозиторий! Он уже добавлен в `.gitignore`
+
 ## то использование
 
 1. Натапните `/start` для запуска
